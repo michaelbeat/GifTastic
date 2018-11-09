@@ -3,45 +3,29 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>GIFs Baby!</title>
+    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
-    <!-- <script src="main.js"></script> -->
+    
 </head>
+
 <body>
     
-<button data-search="Marine Corps">USMC</button>
-<button data-search="Army">Army</button>
-<button data-search="Navy">Navy</button>
-
-<div id="gifsHere"></div>
-
-<script type="text/javascript">
-    $('button').on('click', function(){
-        var x = $(this).data('search');
-        
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + x + "&api_key=dc6zaTOxFJmzC&limit=10"; 
-            
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        })
-        .done(function(response){
-            for(var i = 0; i < response.data.length; i++){
-                var animalDiv = $('<div>');
-                var p = $('<p>').text("Rating: " + response.data[i].rating);
-                var animalImage = $('<img>');
-                animalImage.attr('src', response.data[i].images.fixed_height.url);
-                animalDiv.append(p);
-                animalDiv.append(animalImage);
-                $('#gifsHere').append(animalDiv);
-
-            }
-        })
-    })
-</script>
+   
+    
+    <h1>Welcome!</h1>
+    <label for="search">Search here for what you are looking for</label>
+    <input type="text" id="search">
+    <button id="btn">Submit</button>
+    <div id="art"></div>
+    
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+   
+   
+   <script src="assets/main.js">
+    
+    </script>
 </body>
 </html>
